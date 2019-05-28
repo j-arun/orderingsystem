@@ -1,0 +1,34 @@
+
+entity Product {
+productName String,
+productId String required,
+label String ,
+isInStock String
+}
+
+entity OrderItems {
+orderId String required,
+productId String ,
+quantity Long,
+isInStock String
+}
+
+entity Order {
+orderId String required ,
+orderDate Instant ,
+billValue Long
+}
+
+relationship OneToOne {
+	Order{orderItems} to OrderItems
+}
+relationship OneToMany {
+	OrderItems{product} to
+	Product
+}
+
+
+
+
+
+
