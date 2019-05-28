@@ -1,0 +1,40 @@
+{
+    "name": "Order",
+    "fields": [
+        {
+            "fieldName": "orderId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "orderDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "billValue",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "orderItems",
+            "otherEntityRelationshipName": "order",
+            "relationshipName": "orderItems",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190528112610",
+    "entityTableName": "order",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "orderingsystem",
+    "applications": "*",
+    "microserviceName": "orderingsystem"
+}
